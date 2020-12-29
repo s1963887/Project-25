@@ -11,30 +11,23 @@ var dustBin1, dustBin2, dustBin3;
 
 
 function setup() {
-	createCanvas(800, 700);
+	createCanvas(1600, 700);
 	engine = Engine.create();
 	world = engine.world;
 
-	ground = new Ground(400, 670, 800, 20);
+	ground = new Ground(800, 670, 1600, 20);
 	paperBall = new Paper(200,200,30);
-	dustBin1 = new Dustbin(600,650,200,20);
-	dustBin2 = new Dustbin(700,610,20,100);
-	dustBin3 = new Dustbin(500,610,20,100);
-
-
-	Engine.run(engine);
-  
+	dustBin1 = new Dustbin(1100,550,200,20); 
 }
 
 
 function draw() {
-  background(0);
+  background("lightblue");
   Engine.update(engine);
   ground.display();
   paperBall.display();
   dustBin1.display();
-  dustBin2.display();
-  dustBin3.display();
+  
   
   drawSprites();
  
@@ -42,7 +35,7 @@ function draw() {
 
 function keyPressed(){
 	if(keyCode === UP_ARROW) {
-		Body.applyForce(paperBall.body,paperBall.body.position,{x:120,y:-120});
+		Body.applyForce(paperBall.body,paperBall.body.position,{x:220,y:-175});
 	}
 }
 
